@@ -1,0 +1,41 @@
+{
+  "name": "armw-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fmt": "prettier . -w"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "latest",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/tailwind": "latest",
+    "astro": "latest",
+    "astro-favicons": "^3.1.5",
+    "esbuild": "0.25.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "overrides": {
+    "astro": {
+      "esbuild": "0.25.0"
+    },
+    "vite": {
+      "esbuild": "0.25.0"
+    },
+    "@astrojs/mdx": {
+      "esbuild": "0.25.0"
+    },
+    "@astrojs/tailwind": {
+      "esbuild": "0.25.0"
+    }
+  }
+}
