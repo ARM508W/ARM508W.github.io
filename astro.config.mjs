@@ -10,7 +10,7 @@ import favicons from "astro-favicons";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  site: "https://github.com/ARM508W",
+  site: "https://ARM508W.github.io",
   integrations: [mdx(), favicons(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {
