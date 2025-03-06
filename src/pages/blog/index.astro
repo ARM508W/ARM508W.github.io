@@ -2,20 +2,24 @@
 title: "Blog"
 layout: "layouts/Layout.astro"
 ---
-
 import { getCollection } from "astro:content";
 import BlogPostCard from "@/components/BlogPostCard.astro";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+let posts = [];
+try {
+  posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+} catch (error) {
+  console.error("Error fetching blog posts:", error);
+}
 
 <Layout title="My Engineering Notebooks">
   <Section title="My Engineering Notebooks">
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-      {
+      {posts.length > 0 ? (
         posts.map((post) => (
           <BlogPostCard
             slug={post.id}
@@ -24,7 +28,9 @@ const posts = (await getCollection("blog")).sort(
             date={post.data.pubDate}
           />
         ))
-      }
+      ) : (
+        <p>No blog posts available.</p>
+      )}
     </div>
   </Section>
 </Layout>
