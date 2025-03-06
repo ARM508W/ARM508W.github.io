@@ -4,7 +4,6 @@ description: "The process of designing the custom PCB for the Pico W"
 pubDate: "Feb 20 2025"
 updatedDate: "Feb 21 2025"
 heroImage: "/pico-pcb-ascii.png"
-visibility: "public"
 ---
 
 My process and reasoning for designing a custom PCB
