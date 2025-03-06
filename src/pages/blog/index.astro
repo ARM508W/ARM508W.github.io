@@ -1,12 +1,9 @@
 ---
-title: "Blog"
-layout: "layouts/Layout.astro"
----
 import { getCollection } from "astro:content";
 import BlogPostCard from "@/components/BlogPostCard.astro";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
-
+---
 let posts = [];
 try {
   posts = (await getCollection("blog")).sort(
