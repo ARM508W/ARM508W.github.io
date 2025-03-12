@@ -1,5 +1,5 @@
 ---
-title: "Capstone Project: RPi Pico I2C MUX Breakout Board
+title: "Capstone Project: RPi Pico I2C MUX Breakout Board"
 description: "The process of designing the custom PCB for the Pico W"
 pubDate: "Feb 20 2025"
 updatedDate: "Feb 21 2025"
