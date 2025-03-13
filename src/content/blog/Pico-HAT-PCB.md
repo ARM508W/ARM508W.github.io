@@ -1,12 +1,12 @@
 ---
 title: "Capstone Project: RPi Pico I2C MUX Breakout Board"
-description: "The process of designing the custom PCB for the Pico W"
-pubDate: "Feb 20 2025"
-updatedDate: "Feb 21 2025"
+description: "The timeline of designing the custom MUX breakout PCB for the Pico W"
+pubDate: "Mar 10 2025"
+updatedDate: "Mar 14 2025"
 heroImage: "/pico-pcb-ascii.png"
 ---
 
-My reasoning and process for designing a custom PCB for the Raspberry Pico
+My reasoning and process for designing a custom PCB for the Raspberry Pico microcontroller
 
 ## Reasoning
 For certain components in my capstone project, I would need to be able to detect whenever an object was taken off the desk display. After looking at some of the possible methods, the method I ended up settling on was using magnets for the detecting method. The way it would work was by having a magnet sensor in the back of the desk with a magnet on the other side of it. I would then also attach a magnet on the object, so when the object's magnet connected to the desk magnet, the magnet sensor behind it would sense the change and could shift the desks theme to correspond with the object. Using this method for detection allowed for wireless and more seamless methods for quickly switching between object themes. 
