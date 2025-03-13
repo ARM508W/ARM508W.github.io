@@ -18,6 +18,8 @@ While this method would work great for the capstone project, some issues quickly
 ## Solution Brainstorming
 To start off, I checked the available multiplexer devices that Adafruit and Sparkfun had on their store to see if they could work for the project. What I was looking for was a nice and compact MCU that had multiplexer and WiFi capabilities. With these requirements, I wasn't going to find something like this, so I was going to see if the boards with STEMMA connectors would be compact enough with a microcontroller that supports WiFi, such as the FeatherS2. 
 
+![Alt text](/Adafruit_MUX.jpg)
+
 While this fixed the problem of connecting the magnetometers into the microcontroller, two issues arose from this design.
 
 ### Size 
