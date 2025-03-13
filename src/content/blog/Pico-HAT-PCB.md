@@ -31,3 +31,13 @@ For this ubiquitous desk component of the project, I decided on using the Raspbe
 With these issues, I decided to look and research further into a possible solution or better alternative.
 
 ## Initial Concepts for custom RPI breakout multiplexer PCB
+This is when I started to explore the idea of creating a custom breakout PCB for the Pico W. This would be a serious undertaking, and possibly overshadowing the original project. So I started to research the benefits and possible issues/roadblocks I could run into if I go down this path. 
+
+### First PCB
+I would be concepting, designing and testing my first ever PCB whilst a senior in high school. This would provide me some serious experience early on as I pursue a career in electrical engineering. The experience of having a circuit not just be a bunch of wires connected through a breadboard, but instead be a real circuit board has already been a dream of mine. This came with its obvious issues. Since this was my first PCB, there was going to be some learning-pains and roadblocks that I was going to run into. I also needed to keep in mind possible time-constraints, as I would the design to continue working on the project. 
+
+### Flexibility and Control
+By creating my own custom PCB for the multiplexer, I could decide what design components I would want that other multiplexer boards had, and what parts I could scrap as I wouldn't need them for the project. This also gave me the ability to add components to the Raspberry Pico that it otherwise wouldn't have, such as a built-in Neopixel. This, however, meant that I would need to handle things that I previously didn't need to handle; it wasn't going to be plug and play as the already made multiplexers from Adafruit and SparkFun. 
+
+### Ascetics and Size Footprint
+Having a custom PCB operating the magnetometers would be more impressive than using a bought board. This also allowed me to make the multiplexer more compact than the other two on the market as I could integrate the Pico W directly into the PCB, which is discussed later in the notebook in how I went about this. 
