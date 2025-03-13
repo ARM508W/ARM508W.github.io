@@ -35,7 +35,7 @@ For this ubiquitous desk component of the project, I decided on using the Raspbe
 With these issues, I decided to look and research further into a possible solution or better alternative.
 
 
-# Initial Concepts for custom RPI breakout multiplexer PCB
+# Initial Concepts for Custom RPI Breakout Multiplexer PCB
 
 This is when I started to explore the idea of creating a custom breakout PCB for the Pico W. This would be a serious undertaking, and possibly overshadowing the original project. So I started to research the benefits and possible issues/roadblocks I could run into if I go down this path. 
 
