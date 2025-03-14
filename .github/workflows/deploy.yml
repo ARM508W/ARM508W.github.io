@@ -1,41 +1,43 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy Astro Site
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
-  workflow_dispatch:
-
-# Allow this job to clone the repo and create a page deployment
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main # Or your main branch name (e.g., main, master)
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          package-manager: npm@latest  # Or pnpm@latest, or yarn@latest
-          build-dir: dist # Or public, depending on your Astro config
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          node-version: '20.x' # Or your preferred Node.js version. Using a more recent LTS version.
+
+      - name: Install dependencies
+        run: npm install # Or use 'yarn install' or 'pnpm install' if you use those
+
+      - name: Build Astro site
+        run: npm run build # This command usually runs your Astro build script defined in package.json
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # The output folder from your Astro build (usually 'dist')
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write  # to verify the deployment originates from an appropriate source
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        # No 'with' section needed here as it automatically uses the artifact from the 'upload-pages-artifact' step
