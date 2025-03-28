@@ -21,7 +21,7 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  site: 'ARM508W.github.io',
+  site: 'https://ARM508W.github.io',
   integrations: [
     expressiveCode({
       themes: ['github-light', 'github-dark'],
