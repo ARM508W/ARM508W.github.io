@@ -1,7 +1,7 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'astro-erudite',
+  title: 'ARMW',
   locale: 'en-US',
   description:
     'ARMW blog site. Based on Astro',
