@@ -1,0 +1,29 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Link from '@/components/Link.astro'
+import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { cn } from '@/lib/utils'
+---
+
+<Layout>
+  <PageHead slot="head" title="Ms. West Appreciation" />
+  <Breadcrumbs items={[{ label: 'Ms. West Appreciation', icon: 'lucide:circle-help' }]} />
+
+  <section>
+    <div class="rounded-lg border">
+      <div class="flex flex-col space-y-1.5 p-6">
+        <h3 class="text-3xl leading-none font-medium">Thank you Ms. West!</h3>
+        <p class="text-muted-foreground text-sm">
+          From 2022 to 2025, you have done a lot for me and everyone else in the school.
+        </p>
+      </div>
+      <div class="p-6 pt-0">
+        <p class="text-muted-foreground mb-2 text-sm">
+          So I am using the 1-year anniversy for Teacher of the Year as excuse to display all the things you have accomplished, or helped to become reality!
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
