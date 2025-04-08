@@ -7,7 +7,7 @@ image: './pico-pcb-ascii.png'
 authors: ['ARMW(Armando Martinez)']
 ---
 
-My reasoning and process for designing a custom PCB for the Raspberry Pico microcontroller
+My reasoning and process for designing my first custom PCB for the Raspberry Pico microcontroller
 
 
 
@@ -26,7 +26,8 @@ While this method would work great for the capstone project, some issues quickly
 To start off, I checked the available multiplexer devices that Adafruit and Sparkfun had on their store to see if they could work for the project. What I was looking for was a nice and compact MCU that had multiplexer and WiFi capabilities. With these requirements, I wasn't going to find something like this, so I was going to see if the boards with STEMMA connectors would be compact enough with a microcontroller that supports WiFi, such as the FeatherS2.
 
 
-![Alt text](/Adafruit_MUX.jpg)
+![Adafruit MUX](assets/Adafruit_MUX.jpg)
+Image from [Adafruit](https://learn.adafruit.com/assets/123212)
 
 
 While this fixed the problem of connecting the magnetometers into the microcontroller, two issues arose from this design.
@@ -192,7 +193,7 @@ except mirrored from across the board.
 
 ---
 
-That covers most of the parts I wanted to cover in the initial design.
+That covers the parts I wanted to cover in the initial design.
 
 ---
 
@@ -208,7 +209,7 @@ The changes here are the addition of the SD card reader and Neopixel, which were
 ![First Manufactured Schematic SD Card Reader](assets/first-manu-schem-sdcard.png)
 
 The first image shows the connections are all being made to right side of the Pico W since the bottom right side was better fit for the SD card reader to be placed since of the 
-placement of the traces in that section. This also includes all the necessary parts for it to run properly, decoupling capacitor and pull up-resistors.
+placement of the traces in that section. This also includes all the necessary parts for it to run properly, decoupling capacitor and pull up resistors.
 
 ![First Manufactured Schematic Neopixel](assets/first-manu-schem-neopixel.png)
 
@@ -218,6 +219,7 @@ it's only used for chaining Neopixels together.
 The Neopixel I planned to use here was the 1.5mm Neopixel
 
 ![1.5mm Neopixel Adafruit](assets/1.5mmneopixel.jpg)
+Image from [Adafruit](https://www.adafruit.com/product/4492)
 
 Some of the other changes made in the schematic were changing the address pins and reset pin on the TCA9548a to their default values. At that time, it didn't 
 allow the ability to change them with jumpers pads.
@@ -253,7 +255,7 @@ manufacture would produce the PCB. So I adjusted the constraints and fixed any p
 
 Once it arrived and checked all was in order, it was obvious that I had made a mistake. 
 
-The PCB lacked the necessary pads and connection for the TCA9548a SDA and SCL traces for the Pico W. When I moved all the pull up-resistors for the STEMMA/WII Sports, 
+The PCB lacked the necessary pads and connection for the TCA9548a SDA and SCL traces for the Pico W. When I moved all the pull-up resistors for the STEMMA/WII Sports, 
 I had forgotten to leave or add back in the pull up-resistors for the TCA9548a main SDA and SCL lines. While there were ways to fix this, like using the 
 internal pullup-resistors on the Pico W, it wouldn't be nearly enough to maintain a consistent connection. 
 
@@ -280,7 +282,7 @@ After that, I went around and changed and added some parts/components that I had
 
 As shown in the second image, I had added jumpers for the address and reset pins on the TCA9548a, and changed the Neopixel.
 
-The reason for adding jumpers was to just have them in case I ever needed them. After already needing to another PCB, from the pull up-resistor incident, 
+The reason for adding jumpers was to just have them in case I ever needed them. After already needing to another PCB, from the pullup resistor incident, 
 I really didn't want to reorder another PCB because I thought I would never need access to those pins. 
 
 The second change from that image is the Neopixel. While the symbol doesn't really show much, in the PCB design, the Neopixel footprint is different since 
@@ -300,7 +302,7 @@ placed in the back of the board. This bridges the gap and, in the address pins c
 
 ![Final PCB Neopixel](assets/final-pcb-neopixel.png)
 
-The second image shows the new Neopixel footprint. Nothing other than that had changed, but it allowed the colors to be more prominent. 
+The second image shows the new Neopixel footprint. Nothing other than that had changed with the Neopixel, but just allowed the colors to be more prominent. 
 
 ---
 
