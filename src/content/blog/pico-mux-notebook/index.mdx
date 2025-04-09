@@ -136,7 +136,7 @@ There are three major parts for the schematic design
 - Raspberry Pi Pico W connections
 - STEMMA/QWIIC ports connections
 
-Amongst all these were the required components to allow them to work properly, pullup-resistors, and decoupling capacitors.
+Amongst all these were the required components to allow them to work properly, pull up resistors, and decoupling capacitors.
 ![Initial Schematic MUX Connections](assets/initial-schem-mux.png)
 
 The first image shows the TCA9548a multiplexer connections. This is the IC that provides the capabilities to the Pico W to connect to the multiple I2C
@@ -144,7 +144,7 @@ devices that are the same. The top left SDA and SCL pins are the main pins conne
 will be connected. The other components near the multiplexer are the power LED that would light up when the Pico W is powered. The other is a decoupling capacitor 
 for it.
 
-Some things to note, the pullup-resistors needed for the all the SDA and SCL pins were moved to where the STEMMA/QWIIC ports are defined, which
+Some things to note, the pull up resistors needed for the all the SDA and SCL pins were moved to where the STEMMA/QWIIC ports are defined, which
 lead to a problem down the line. The other thing is the address pins and the reset pin are X out. This was only for the initial concept and were later changed 
 to be set to their default state, High or Low, and then changed again in the final revision.
 
@@ -157,7 +157,7 @@ easy access to the pins not in use.
 ![Initial Schematic STEMMA/QWIIC Ports](assets/initial-schem-stemma.png)
 
 The third image shows the STEMMA/QWIIC ports that allow the I2C devices to be connected. These are all the necessary parts are placed, like 
-the pullup-resistors, and pullup capacitors.
+the pull up resistors, and pullup capacitors.
 
 This only shows one of the ports, this design is repeated 8 times in total for all the multiplexer SDA and SCL pins.
 This component of the PCB is the one that remains mostly the same across iterations. 
@@ -186,7 +186,7 @@ all the components are added.
 ![Initial PCB STEMMA/QWIIC Ports](assets/initial-pcb-stemma.png)
 
 The second image shows the STEMMA/QWIIC ports that are off to the side of the board. They get their power from the 3.3V trace from the Pico W going around the edge of the board.
-The SDA and SCL pins first go through the pull up-resistors and then go to the TCA9548a multiplexer. 
+The SDA and SCL pins first go through the pull up resistors and then go to the TCA9548a multiplexer. 
 
 Near the bottom, you can see that a GND via is needed since a GND island was created from the 3.3V trace. This was needed for all of the ports since their components are laid out the same, 
 except mirrored from across the board.
@@ -209,7 +209,7 @@ The changes here are the addition of the SD card reader and Neopixel, which were
 ![First Manufactured Schematic SD Card Reader](assets/first-manu-schem-sdcard.png)
 
 The first image shows the connections are all being made to right side of the Pico W since the bottom right side was better fit for the SD card reader to be placed since of the 
-placement of the traces in that section. This also includes all the necessary parts for it to run properly, decoupling capacitor and pull up resistors.
+placement of the traces in that section. This also includes all the necessary parts for it to run properly, decoupling capacitors and pull up resistors.
 
 ![First Manufactured Schematic Neopixel](assets/first-manu-schem-neopixel.png)
 
@@ -235,7 +235,7 @@ The changes here are also the addition of the SD card and Neopixel components.
 
 **Sorry, this when the PCB design starts to get cluttered**
 
-The SD card reader is positioned in the right side of the board, with all of its pullup-resisors being placed around the general area. 
+The SD card reader is positioned in the right side of the board, with all of its pull up resistors being placed around the general area. 
 It got a little close in some areas, like the resistors near the STEMMA/QWIC ports, but I think overall, the SD card reader fits in pretty nicely.
 
 ![First Manufactured PCB Neopixel](assets/first-manu-pcb-neopixel.png)
@@ -255,9 +255,9 @@ manufacture would produce the PCB. So I adjusted the constraints and fixed any p
 
 Once it arrived and checked all was in order, it was obvious that I had made a mistake. 
 
-The PCB lacked the necessary pads and connection for the TCA9548a SDA and SCL traces for the Pico W. When I moved all the pull-up resistors for the STEMMA/WII Sports, 
-I had forgotten to leave or add back in the pull up-resistors for the TCA9548a main SDA and SCL lines. While there were ways to fix this, like using the 
-internal pullup-resistors on the Pico W, it wouldn't be nearly enough to maintain a consistent connection. 
+The PCB lacked the necessary pads and connection for the TCA9548a SDA and SCL traces for the Pico W. When I moved all the pull up resistors for the STEMMA/WII Sports, 
+I had forgotten to leave or add back in the pull up resistors for the TCA9548a main SDA and SCL lines. While there were ways to fix this, like using the 
+internal pull up resistors on the Pico W, it wouldn't be nearly enough to maintain a consistent connection. 
 
 While this sucked, **a lot**, I still decided to quickly solder on a Pico W to test out if the STEMMA/QWIIC ports could power a I2C devices and the other functions 
 of the board. This ended up going well as the other parts of the board worked great. 
@@ -272,7 +272,7 @@ Now was the time to make all the changes with the PCB since seeing in-person for
 ---
 
 ### `Schematic`
-The first change was the addition of the two missing pull up-resistors for TCA9548a. 
+The first change was the addition of the two missing pull up resistors for TCA9548a. 
 
 ![Final Schematic Pullup-Resistors](assets/final-schem-pullup.png)
 
@@ -282,7 +282,7 @@ After that, I went around and changed and added some parts/components that I had
 
 As shown in the second image, I had added jumpers for the address and reset pins on the TCA9548a, and changed the Neopixel.
 
-The reason for adding jumpers was to just have them in case I ever needed them. After already needing to another PCB, from the pullup resistor incident, 
+The reason for adding jumpers was to just have them in case I ever needed them. After already needing to another PCB, from the pull up resistor incident, 
 I really didn't want to reorder another PCB because I thought I would never need access to those pins. 
 
 The second change from that image is the Neopixel. While the symbol doesn't really show much, in the PCB design, the Neopixel footprint is different since 
@@ -293,11 +293,11 @@ Across the schematic, I had adjusted some of the values for the resistors, like 
 ---
 
 ### `PCB`
-The main changes are, again, the addition of the missing pullup-resistors, jumpers for the TCA9548a, and changing the Neopixel footprint.
+The main changes are, again, the addition of the missing pull up resistors, jumpers for the TCA9548a, and changing the Neopixel footprint.
 
 ![Final PCB Pullup-Resistors and Jumpers](assets/final-pcb-pullup.png)
 
-The first image shows the missing pullup resistors at the bottom, and the new jumpers at the top. The way the jumpers work is by just adding some solder to the jumper 
+The first image shows the missing pull up resistors at the bottom, and the new jumpers at the top. The way the jumpers work is by just adding some solder to the jumper 
 placed in the back of the board. This bridges the gap and, in the address pins case, allows the TCA9548a to change its address, if you wanted to chain these together, **For some reason**.
 
 ![Final PCB Neopixel](assets/final-pcb-neopixel.png)
@@ -351,4 +351,5 @@ This notebook is already too long, so the next notebook will talk about the code
 The [GitHub repo for the PCB](https://github.com/ARM508W/Pico-I2C-MUX-Breakout-Board/tree/main) contains all the steps to create your own version, with all the KiCAD files.
 
 This wouldn't have been possible without my teacher, Ms. West, for providing me with all the necessary materials and support for me to complete this project. Thank you! 🤍
+
 
